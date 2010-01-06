@@ -1,0 +1,50 @@
+BrowserMedia RubyCAS-server
+===========================
+This fork allows for multiple installations of rubycas-server on a single server. It does this by assuming that the
+config.yml is located within the project itself i.e. /config/config.yml
+
+See http://code.google.com/p/rubycas-server/wiki/DeployingUnderPhusionPassenger for additional potentially relevant info.
+
+Installing for Passenger
+=======================
+$ cd /var/www/vhosts
+$ git clone git@github.com:browsermedia/rubycas-server.git
+$ mv rubycas-server cas.clientname.org
+$ cd cas.clientname.org
+$ mv config/sample.config.yml config.yml
+
+Edit the config/config.yml to:
+1. Set the correct database info (db, username, pw) for this CAS server (The MySQL db will need to be created as well.)
+2. Set the correct paths for the log file (should be /var/www/vhosts/cas.clientname.org/log/casserver.log)
+This config.yml file uses a Test Authenticator to valid with any username. 
+
+Next configure Apache, adding the following to the vhost.conf
+
+Listen 443
+<VirtualHost *:443>
+  ServerAdmin admin@example.net
+  ServerName login.example.net
+
+  SSLEngine On
+  SSLCertificateFile /etc/apache2/ssl.crt/example.pem
+
+  RailsAutoDetect off
+
+  DocumentRoot /var/www/vhosts/cas.clientname.org/public
+
+  <Directory "/var/www/vhosts/cas.clientname.org/public">
+    AllowOverride all
+    Allow from all
+  </Directory>
+</VirtualHost>
+
+An SSL certificate is required as well. Then restart apache.
+
+Testing
+=======
+1. Go to https://cas.clientname.org. Should bring up the 'login' page.
+2. Enter username as 'test' and password as 'testpassword'.
+
+If everything is working, you should get a message saying login has worked. If you return to https://cas.clientname.org
+there should be a messaging stating you are logged in as 'test'.
+

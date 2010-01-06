@@ -1,0 +1,19 @@
+database:
+  adapter: mysql
+  database: casserver
+  username: root
+  password: 
+  host: localhost
+
+authenticator:
+-
+  class: CASServer::Authenticators::Test
+  
+theme: simple
+organization: RubyCAS
+infoline: RubyCAS Server
+default_locale: en
+
+log:
+  file: /var/www/vhosts/rubycas-server/log/casserver.log
+  level: WARN

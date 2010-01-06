@@ -13,6 +13,9 @@ require 'rack'
 $APP_NAME = 'rubycas-server'
 $APP_ROOT = ::File.dirname(::File.expand_path(__FILE__))
 
+# This makes it possible to have multiple rubycas installations
+$CONFIG_FILE_LOCATION = "#{$APP_ROOT}/config/config.yml"
+
 if ::File.exist?("#{$APP_ROOT}/tmp/debug.txt")
   require 'ruby-debug'
   Debugger.wait_connection = true

@@ -12,3 +12,7 @@ For info and installation instructions please see http://code.google.com/p/rubyc
 
 RubyCAS-Server is licensed for use under the terms of the MIT License. 
 See the LICENSE.txt file bundled with the official RubyCAS-Server distribution for details.
+
+
+== BrowserMedia
+See Installation instructions for Passenger in 'Install_for_Passenger.txt'.
