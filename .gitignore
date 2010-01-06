@@ -12,3 +12,4 @@ ssl
 custom/*
 .DS_Store
 .idea/*
+tmp/*
