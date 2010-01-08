@@ -8,7 +8,7 @@ See http://code.google.com/p/rubycas-server/wiki/DeployingUnderPhusionPassenger 
 Installing for Passenger
 =======================
 $ cd /var/www/vhosts
-$ git clone git@github.com:browsermedia/rubycas-server.git
+$ git clone git://github.com/browsermedia/rubycas-server.git
 $ mv rubycas-server cas.clientname.org
 $ cd cas.clientname.org
 $ mv config/sample.config.yml config.yml
