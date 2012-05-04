@@ -1,5 +1,10 @@
 = RubyCAS-Server
 
+This is an old fork of RubyCAS-server which was customized to handle config.yml being in different places. It is no longer maintained. It exists solely as a historical record for implementations that use it's code base.
+
+See https://github.com/browsermedia/rubycas-server for the most current fork.
+
+== Copyrights
 *Copyright*:: Portions contributed by Matt Zukowski are copyright (c) 2009 Urbacon Ltd.
               Other portions are copyright of their respective authors.
 *Authors*::   See http://github.com/gunark/rubycas-server/commits/
@@ -14,5 +19,3 @@ RubyCAS-Server is licensed for use under the terms of the MIT License.
 See the LICENSE.txt file bundled with the official RubyCAS-Server distribution for details.
 
 
-== BrowserMedia
-See Installation instructions for Passenger in 'Install_for_Passenger.txt'.
